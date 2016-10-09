@@ -1,0 +1,10 @@
+GetBalance balance
+GetBalance what is my balance
+GetBalance what is my account balance
+GetBalance how much money do I have
+GetBalance am I rich
+GetBalance am I poor
+GetBalance show me the money
+LastTransaction my last transaction
+LastTransaction last thing I did
+LastTransaction when did I last spend money
