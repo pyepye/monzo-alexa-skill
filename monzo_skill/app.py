@@ -19,8 +19,8 @@ def home():
 @app.route('/alexa/', methods=['POST'])
 def alexa():
     event = request.get_json()
-    if (event['session']['application']['applicationId'] !=
-            'amzn1.ask.skill.98d21241-9161-42af-a29b-5cf778c12357'):
+    app_id = event['session']['application']['applicationId']
+    if app_id != 'amzn1.ask.skill.98d21241-9161-42af-a29b-5cf778c12357':
         raise ValueError('Invalid Application ID')
 
     try:
@@ -33,11 +33,12 @@ def alexa():
             {'requestId': event['request']['requestId']}, event['session']
         )
 
-    if event['request']['type'] == 'LaunchRequest':
+    request_type = event['request']['type']
+    if request_type == 'LaunchRequest':
         response = on_launch(event['request'], event['session'])
-    elif event['request']['type'] == 'IntentRequest':
+    elif request_type == 'IntentRequest':
         response = on_intent(event['request'], event['session'], access_token)
-    elif event['request']['type'] == 'SessionEndedRequest':
+    elif request_type == 'SessionEndedRequest':
         response = on_session_ended(event['request'], event['session'])
     return jsonify(**response)
 
@@ -62,8 +63,7 @@ def on_intent(intent_request, session, access_token):
         return last_transaction(access_token)
     elif intent_name == 'AMAZON.HelpIntent':
         return welcome_response()
-    elif (intent_name == 'AMAZON.CancelIntent' or
-          intent_name == 'AMAZON.StopIntent'):
+    elif intent_name in ['AMAZON.CancelIntent', 'AMAZON.StopIntent']:
         return handle_session_end_request()
     else:
         raise ValueError('Invalid intent')
@@ -75,7 +75,7 @@ def on_session_ended(session_ended_request, session):
 
 
 def handle_session_end_request():
-    card_title = 'Monzo: Thanks'
+    card_title = 'Monzo: Thank you'
     speech_output = u'Thank you for using the Monzo Alexa skill.'
     should_end_session = True
     response = build_speech_response(
@@ -86,7 +86,7 @@ def handle_session_end_request():
 
 def welcome_response():
     session_attributes = {}
-    card_title = 'Monzo'
+    card_title = 'Monzo: Welcome'
     speech_output = """Welcome to the Alexa Monzo skill. Ask for you balance or
                     information on your last transaction."""
     reprompt_text = """Please ask me for your balance or transaction history."""  # NOQA
@@ -114,7 +114,7 @@ def balance(access_token):
 
 def spent_today(access_token):
     session_attributes = {}
-    card_title = 'Monzo: Spent Today'
+    card_title = 'Monzo: What you spent today'
     reprompt_text = ''
     should_end_session = False
 

@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "SessionId.daf38229-d151-45d4-823b-15784b676cc9",
+    "application": {
+      "applicationId": "amzn1.ask.skill.98d21241-9161-42af-a29b-5cf778c12357"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AGA3PIFSEGAW3S3WHAD5NGMTWNBGNL5UVDCQYYT4RTXR7IJ4GADATR57FLWTXFQGE4JOFJNE66XUEU5GBDN7AZO6SDIU2JTIDQBJNVUQU2YR6J4JMDT5OE6AAS3H7BJO6D6DQVKL6TSO7Z5G24TFQKFMAWCWWZBJJ5HJGWR26VG3K6SWRTZWYD4ATBFRTVFZG2SCXLEX6DGZIVA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.9f848e85-c500-40ac-b642-0fef23422873",
+    "locale": "en-GB",
+    "timestamp": "2016-10-09T13:36:52Z",
+    "intent": {
+      "name": "GetBalance",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

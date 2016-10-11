@@ -39,7 +39,7 @@ def get_last_transaction(access_token):
 
 def date_to_speech(date_string):
     compare_time = parser.parse(date_string).replace(tzinfo=None)
-    days_ago = (datetime.today() - compare_time).replace(tzinfo=None).days
+    days_ago = (datetime.today() - compare_time).days
     if days_ago == 0:
         return 'today'
     if days_ago == 1:
