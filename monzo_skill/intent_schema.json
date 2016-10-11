@@ -4,6 +4,9 @@
       "intent": "GetBalance"
     },
     {
+      "intent": "SpentToday"
+    },
+    {
       "intent": "LastTransaction"
     },
     {

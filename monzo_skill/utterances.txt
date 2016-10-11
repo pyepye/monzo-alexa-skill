@@ -1,10 +1,17 @@
-GetBalance balance
+GetBalance for my balance
+GetBalance for my balance please
 GetBalance what is my balance
 GetBalance what is my account balance
 GetBalance how much money do I have
 GetBalance am I rich
 GetBalance am I poor
+GetBalance if I'm rich
+GetBalance if I'm poor
 GetBalance show me the money
+GetBalance to show me the money
+SpentToday what have I spent today
+SpentToday how much money have I spent today
 LastTransaction my last transaction
+LastTransaction what was my last transaction
 LastTransaction last thing I did
 LastTransaction when did I last spend money

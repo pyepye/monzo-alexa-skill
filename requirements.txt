@@ -1,5 +1,6 @@
 flask
 ipdb
 requests[security]
+python-dateutil
 gunicorn
 #pip install -e git+git@github.com:pyepye/monzo-python.git#egg=Package
