@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify
 
-from .utils import (
+from monzo_skill.utils import (
     get_balance, get_spent_today, get_last_transaction,
     build_speech_response, build_linked_account, build_response
 )
