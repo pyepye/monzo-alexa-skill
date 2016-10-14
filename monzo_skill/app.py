@@ -105,7 +105,7 @@ def balance(access_token):
     should_end_session = False
 
     balance = get_balance(access_token)
-    speech = unicode('Your Monzo balance is {0}.'.format(balance), 'utf-8')
+    speech = u'Your Monzo balance is {0}.'.format(balance)
     response = build_speech_response(
         card_title, speech, reprompt_text, should_end_session
     )
@@ -114,12 +114,12 @@ def balance(access_token):
 
 def spent_today(access_token):
     session_attributes = {}
-    card_title = 'Monzo: What you spent today'
+    card_title = 'Monzo: Spent today'
     reprompt_text = ''
     should_end_session = False
 
     spent_today = get_spent_today(access_token)
-    speech = unicode('Your Monzo balance is {0}.'.format(spent_today), 'utf-8')
+    speech = u'Your have spent {0} today.'.format(spent_today)
     response = build_speech_response(
         card_title, speech, reprompt_text, should_end_session
     )

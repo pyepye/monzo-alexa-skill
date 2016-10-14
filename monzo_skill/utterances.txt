@@ -1,6 +1,7 @@
 GetBalance for my balance
 GetBalance for my balance please
 GetBalance what is my balance
+GetBalance what my balance is
 GetBalance what is my account balance
 GetBalance how much money do I have
 GetBalance am I rich
