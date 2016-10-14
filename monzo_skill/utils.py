@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from dateutil import parser
 
@@ -24,8 +24,12 @@ def get_spent_today(access_token):
 def get_last_transaction(access_token):
     monzo = MonzoClient(access_token=access_token)
     monzo.update_tokens()
-    # Should limit transactions to the last month
-    transaction = monzo.list_transactions(limit=100000)[::-1][0]
+
+    days_ago = datetime.today() - timedelta(40)
+    transaction = monzo.list_transactions(
+        limit=100000,
+        since=days_ago.isoformat() + 'Z'
+    )[::-1][0]
 
     amount = money_to_string(transaction['amount'], transaction['currency'])
     when = date_to_speech(transaction['created'])
