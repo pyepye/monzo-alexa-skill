@@ -1,6 +1,6 @@
 # Monza Alexa Skill API
 
-Custom alexa skill API for [Monzo](https://monzo.com/)
+Custom alexa skill API for [Monzo](https://monzo.com/) with help using the my [monzo-python](https://github.com/pyepye/monzo-python) api wrapper.
 
 A basic and slow example of the API working with echosim.io:
 https://www.youtube.com/watch?v=Llodh4puJMo
@@ -65,3 +65,4 @@ _Note: If you are using [echosim.io](http://echosim.io) make sure you skill lang
 
 ## ToDo:
 * Tests
+* Add logging
