@@ -1,0 +1,25 @@
+{
+  "session": {
+    "sessionId": "SessionId.ede02530-2f12-4123-9643-02f4d31b7973",
+    "application": {
+      "applicationId": ""
+    },
+    "attributes": {},
+    "user": {
+      "userId": "",
+      "accessToken": ""
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.0a140786-8801-4406-8d9c-51b3686c54e9",
+    "locale": "en-GB",
+    "timestamp": "2016-10-18T22:00:11Z",
+    "intent": {
+      "name": "SpentToday",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

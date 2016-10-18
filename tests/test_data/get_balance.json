@@ -1,0 +1,25 @@
+{
+  "session": {
+    "sessionId": "SessionId.0205a768-e04f-47a6-8f0b-96f2132173b6",
+    "application": {
+      "applicationId": ""
+    },
+    "attributes": {},
+    "user": {
+      "userId": "",
+      "accessToken": ""
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.55b6a65e-aac2-47cd-bc28-8c8f133f863a",
+    "locale": "en-GB",
+    "timestamp": "2016-10-18T21:23:08Z",
+    "intent": {
+      "name": "GetBalance",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

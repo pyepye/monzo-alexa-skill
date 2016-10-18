@@ -1,0 +1,25 @@
+{
+  "session": {
+    "sessionId": "SessionId.94c05676-9866-4adf-944e-c2f57ac4457d",
+    "application": {
+      "applicationId": ""
+    },
+    "attributes": {},
+    "user": {
+      "userId": "",
+      "accessToken": ""
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.ad8273a0-b7f4-40aa-bfd4-a2d71ec076d8",
+    "locale": "en-GB",
+    "timestamp": "2016-10-18T22:01:11Z",
+    "intent": {
+      "name": "LastTransaction",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

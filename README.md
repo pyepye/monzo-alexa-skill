@@ -5,6 +5,13 @@ Custom alexa skill API for [Monzo](https://monzo.com/) with help using the my [m
 A basic and slow example of the API working with echosim.io:
 https://www.youtube.com/watch?v=Llodh4puJMo
 
+## Testing
+* Create a new Monzo OAuth Client for testing
+* `export MONZO_CLIENT_ID=#####`
+* `export MONZO_CLIENT_SECRET=#####`
+* `py.test tests -v`
+
+
 ## Setup
 
 __*WARNING*__

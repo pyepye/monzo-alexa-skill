@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# import logging
 
 from flask import Flask, request, jsonify
 
@@ -6,9 +7,11 @@ from monzo_skill.utils import (
     get_balance, get_spent_today, get_last_transaction,
     build_speech_response, build_linked_account, build_response
 )
+from monzo_skill import settings
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'changeme'
+# app.logger.addHandler(settings.FILE_HANDLER)
 
 
 @app.route('/')
@@ -147,4 +150,4 @@ def last_transaction(access_token):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8006)
+    app.run(host='0.0.0.0', port=8006, debug=settings.DEBUG)
