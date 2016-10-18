@@ -3,6 +3,8 @@ import json
 
 from flask import url_for
 
+from monzo_skill import settings
+
 
 class TestMonzoAlexaSkill:
 
@@ -13,8 +15,7 @@ class TestMonzoAlexaSkill:
         assert response_json['test'] == "I'm running"
 
     def test_get_balance(app, monzo, client):
-        data = load_json('get_balance.json')
-        data['session']['user']['accessToken'] = monzo.access_token
+        data = load_test_data('get_balance.json', monzo)
         response = client.post(
             url_for('alexa'),
             headers={'content-type': 'application/json'},
@@ -29,8 +30,7 @@ class TestMonzoAlexaSkill:
         assert response['response']['card']['title'] == 'Monzo: Your balance'
 
     def test_spent_today(app, monzo, client):
-        data = load_json('spent_today.json')
-        data['session']['user']['accessToken'] = monzo.access_token
+        data = load_test_data('spent_today.json', monzo)
         response = client.post(
             url_for('alexa'),
             headers={'content-type': 'application/json'},
@@ -45,8 +45,7 @@ class TestMonzoAlexaSkill:
         assert response['response']['card']['title'] == 'Monzo: Spent today'
 
     def test_last_transaction(app, monzo, client):
-        data = load_json('last_transaction.json')
-        data['session']['user']['accessToken'] = monzo.access_token
+        data = load_test_data('last_transaction.json', monzo)
         response = client.post(
             url_for('alexa'),
             headers={'content-type': 'application/json'},
@@ -61,7 +60,10 @@ class TestMonzoAlexaSkill:
         assert response['response']['card']['title'] == 'Monzo: Your last transaction'  # NOQA
 
 
-def load_json(filename):
+def load_test_data(filename, monzo):
     filepath = os.path.join(os.path.dirname(__file__), "test_data", filename)
     with open(filepath) as test_file:
-        return json.load(test_file)
+        data = json.load(test_file)
+    data['session']['user']['accessToken'] = monzo.access_token
+    data['session']['application']['applicationId'] = settings.ALEXA_APP_ID
+    return data

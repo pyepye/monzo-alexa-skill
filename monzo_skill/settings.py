@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from os.path import join, normpath
-from logging import Formatter, FileHandler
+import os
 
+# from os.path import join, normpath
+# from logging import Formatter, FileHandler
+ALEXA_APP_ID = os.getenv('ALEXA_APP_ID')
 DEBUG = False
-LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
 
 # LOG_NAME = 'monzo.log'
 # LOG_FOLDER = '/var/log/monzo/'

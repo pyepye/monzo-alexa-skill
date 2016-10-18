@@ -29,12 +29,12 @@ Setting up and testing this custom skill is not very friendly. This is because y
 This is a basic and poor explanation on the setup, I actually use supervisor and nginx to run the flask app (see `server_setup/`). If you want help with setting up a server let me know.
 
 1. Fork this repo
-2. Edit line 23 in `monzo_skill/app.py` with the app id from the Alexa Setup below (this really shouldn't be hard coded)
-3. `git clone [yourfork] && cd monzo-alexa-skill`
+2. `git clone [yourfork] && cd monzo-alexa-skill`
 3. `pip install -r requirements.txt`
 4. `pip install -e git+git@[yourfork]#egg=Package` # Replace the github link with your fork
-5. `PYTHONPATH=./ python monzo_skill/app.py`
-6. Test it's running at https://[yourserver]/
+5. `export ALEXA_APP_ID=#####`  # You will need to have done the Alexa Setup for this
+6. `PYTHONPATH=./ python monzo_skill/app.py`
+7. Test it's running at https://[yourserver]/
 
 
 ### Alexa Setup
@@ -42,16 +42,15 @@ This is a basic and poor explanation on the setup, I actually use supervisor and
 _Note: If you are using [echosim.io](http://echosim.io) make sure you skill language is `English (U.S.)` or you skill will not be recognised_
 
 1. Add a new Alexa skill at https://developer.amazon.com/edw/home.html#/skills/list
-2. (Edit line 23 in `monzo_skill/app.py` with the app id, again this really shouldn't be hard coded)
-3. Skill Information
+2. Skill Information
     * Skill Type: Custom Interaction Model
     * Name: Monzo
     * Invocation Name: Monzo
     * Audio Player: No
-4. Interaction Model
+3. Interaction Model
     * Intent Schema: Copy from `monzo_skill/intent_shema.json`
     * Sample Utterances: Copy from `monzo_skill/utterances.txt`
-5. Configuration
+4. Configuration
     * Service Endpoint Type: HTTPS
     * HTTPS URL: Europe - https://[yourserver]/alexa/
     * Account Linking: Yes
@@ -62,14 +61,13 @@ _Note: If you are using [echosim.io](http://echosim.io) make sure you skill lang
     * Access Token URI: https://api.monzo.com/oauth2/token
     * Client Secret: From your Monzo OAuth Client
     * Client Authentication Scheme: HTTP Basic
-6. SSL Certificate
+5. SSL Certificate
     * Certificate for EU Endpoint:  My development endpoint has a certificate
-7. Login to [echosim.io](http://echosim.io)
-8. Login to http://alexa.amazon.com/
-9. Go to Skills > Your Skills (top right) > Monzo > Link Account
-10. You are ready to go. Get testing on echosim.io
+6. Login to [echosim.io](http://echosim.io)
+7. Login to http://alexa.amazon.com/
+8. Go to Skills > Your Skills (top right) > Monzo > Link Account
+9. You are ready to go. Get testing on echosim.io
 
 
 ## ToDo:
-* Tests
 * Add logging

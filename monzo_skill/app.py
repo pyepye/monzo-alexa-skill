@@ -23,7 +23,7 @@ def home():
 def alexa():
     event = request.get_json()
     app_id = event['session']['application']['applicationId']
-    if app_id != 'amzn1.ask.skill.98d21241-9161-42af-a29b-5cf778c12357':
+    if app_id != settings.ALEXA_APP_ID:
         raise ValueError('Invalid Application ID')
 
     try:
