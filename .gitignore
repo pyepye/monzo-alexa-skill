@@ -25,6 +25,7 @@ pip-log.txt
 .tox
 nosetests.xml
 .cache
+tests/token_info.json
 
 # Translations
 *.mo
